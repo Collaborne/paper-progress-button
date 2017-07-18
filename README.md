@@ -1,7 +1,7 @@
 paper-progress-button [![Bower version](https://badge.fury.io/bo/paper-progress-button.svg)](http://badge.fury.io/bo/paper-progress-button) [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/Collaborne/paper-progress-button)
 =========
 
-A paper button gets disabled and shows a spinner while submitting.
+A paper button gets disabled and shows a spinner while submitting
 
 To install the element:
 
