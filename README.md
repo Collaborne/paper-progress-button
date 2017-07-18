@@ -11,7 +11,7 @@ To install the element:
 ```
 <custom-element-demo>
   <template>
-    <link rel="import" href="paper-checkbox.html">
+    <link rel="import" href="../paper-checkbox/paper-checkbox.html">
     <link rel="import" href="paper-progress-button.html">
     <div>
       <template is="dom-bind">
