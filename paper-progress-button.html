@@ -1,0 +1,67 @@
+<!doctype html>
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../paper-button/paper-button.html">
+<link rel="import" href="../paper-spinner/paper-spinner-lite.html">
+
+<!--
+@demo demo/index.html
+-->
+<dom-module id="paper-progress-button">
+
+	<template>
+		<style>
+			:host {
+				display: inline-block;
+			}
+
+			.spinner {
+				margin-left: 10px;
+			}
+
+			[hidden] {
+				display: none;
+			}
+		</style>
+
+		<paper-button raised disabled="[[!active]]" on-tap="_onTap">
+			[[_computeText(active, activeText, inactiveText)]]
+			<paper-spinner-lite hidden$="[[active]]" active="[[!active]]" class="spinner"></paper-spinner-lite>
+		</paper-button>
+	</template>
+
+	<script>
+
+		class PaperProgressButton extends Polymer.Element {
+
+			static get is() {
+				return 'paper-progress-button';
+			}
+
+			static get properties() {
+				return {
+					/** True if the button is active, e.g. not submitting */
+					active: {
+						type: Boolean,
+						value: true,
+					},
+					/** Text shown while the button is active, e.g. "Submit" */
+					activeText: String,
+					/** Text shown while the button is inactive, e.g. "Submitting..." */
+					inactiveText: String,
+				};
+			}
+
+			_computeText(active, activeText, inactiveText) {
+				return active ? activeText : inactiveText;
+			}
+
+			_onTap(e) {
+				this.dispatchEvent(new CustomEvent('pressed'));
+			}
+
+		}
+		customElements.define(PaperProgressButton.is, PaperProgressButton);
+
+	</script>
+
+</dom-module>

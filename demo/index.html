@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="../../webcomponentsjs/webcomponents-loader.js"></script>
+		<link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+		<link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+		<link rel="import" href="../../paper-checkbox/paper-checkbox.html">
+		<link rel="import" href="../paper-progress-button.html">
+		<title>Demo</title>
+	</head>
+
+	<body>
+		<custom-style>
+			<style include="demo-pages-shared-styles">
+				paper-checkbox {
+					margin-top: 16px;
+				}
+			</style>
+		</custom-style>
+
+		<demo-snippet class="centered-demo">
+			<template>
+				<dom-bind>
+					<template>
+						<div class="vertical-section-container">
+
+							<paper-progress-button
+								active="[[active]]"
+								active-text="Submit"
+								inactive-text="Submitting..."
+								on-pressed="toggleActive">
+							</paper-progress-button>
+
+							<paper-checkbox checked="{{active}}">Active</paper-checkbox>
+							
+						</div>
+					</template>
+				</dom-bind>
+			</template>
+		</demo-snippet>
+
+		<script>
+			const demo = document.querySelector("dom-bind");
+			demo.active = true;
+			demo.toggleActive = () => demo.active = !demo.active;
+		</script>
+	</body>
+</html>
