@@ -34,9 +34,9 @@ A paper button gets disabled and shows a spinner while submitting
 			}
 		</style>
 
-		<paper-button raised disabled="[[_computedButtonDisabled(disabled, active)]]" on-tap="_onTap" class="button">
-			[[_computeText(active, activeText, inactiveText)]]
-			<paper-spinner-lite hidden$="[[active]]" active="[[!active]]" class="spinner"></paper-spinner-lite>
+		<paper-button raised disabled="[[_computedButtonDisabled(active, disabled)]]" on-tap="_onTap" class="button">
+			[[_computeText(active, disabled, activeText, inactiveText)]]
+			<paper-spinner-lite hidden$="[[!_spinnerVisible]]" active="[[_spinnerVisible]]" class="spinner"></paper-spinner-lite>
 		</paper-button>
 	</template>
 
@@ -64,19 +64,28 @@ A paper button gets disabled and shows a spinner while submitting
 					activeText: String,
 					/** Text shown while the button is inactive, e.g. "Submitting..." */
 					inactiveText: String,
+
+					_spinnerVisible: {
+						type: Boolean,
+						computed: '_computeSpinnerVisible(active, disabled)'
+					}
 				};
 			}
 
-			_computeText(active, activeText, inactiveText) {
-				return active ? activeText : inactiveText;
+			_computeText(active, disabled, activeText, inactiveText) {
+				return active || disabled ? activeText : inactiveText;
 			}
 
 			_onTap(e) {
 				this.dispatchEvent(new CustomEvent('pressed'));
 			}
 
-			_computedButtonDisabled(disabled, active) {
-				return disabled || !active;
+			_computedButtonDisabled(active, disabled) {
+				return !active || disabled;
+			}
+
+			_computeSpinnerVisible(active, disabled) {
+				return !active && !disabled;
 			}
 
 		}
