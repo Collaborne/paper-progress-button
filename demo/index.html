@@ -26,12 +26,14 @@
 
 							<paper-progress-button
 								active="[[active]]"
+								disabled="[[disabled]]"
 								active-text="Submit"
 								inactive-text="Submitting..."
 								on-pressed="toggleActive">
 							</paper-progress-button>
 
 							<paper-checkbox checked="{{active}}">Active</paper-checkbox>
+							<paper-checkbox checked="{{disabled}}">Disabled</paper-checkbox>
 							
 						</div>
 					</template>
