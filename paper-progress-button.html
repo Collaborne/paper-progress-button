@@ -16,8 +16,13 @@ A paper button gets disabled and shows a spinner while submitting
 				display: inline-block;
 			}
 
+			.button {
+				@apply --paper-progress-button-button;
+			}
+
 			.spinner {
 				margin-left: 10px;
+				@apply --paper-progress-button-spinner;
 			}
 
 			[hidden] {
@@ -25,7 +30,7 @@ A paper button gets disabled and shows a spinner while submitting
 			}
 		</style>
 
-		<paper-button raised disabled="[[!active]]" on-tap="_onTap">
+		<paper-button raised disabled="[[!active]]" on-tap="_onTap" class="button">
 			[[_computeText(active, activeText, inactiveText)]]
 			<paper-spinner-lite hidden$="[[active]]" active="[[!active]]" class="spinner"></paper-spinner-lite>
 		</paper-button>
