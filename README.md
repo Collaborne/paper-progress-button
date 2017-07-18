@@ -13,11 +13,11 @@ To install the element:
   <template>
     <link rel="import" href="../paper-checkbox/paper-checkbox.html">
     <link rel="import" href="paper-progress-button.html">
-    <div>
+    <dom-bind>
       <template is="dom-bind">
         <next-code-block></next-code-block>
       </template>
-    </div>
+    </dom-bind>
   </template>
 </custom-element-demo>
 ```
