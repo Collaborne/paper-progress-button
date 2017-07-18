@@ -11,22 +11,24 @@ To install the element:
 ```
 <custom-element-demo>
   <template>
+    <link rel="import" href="paper-checkbox.html">
     <link rel="import" href="paper-progress-button.html">
-    <next-code-block></next-code-block>
+    <div>
+      <template is="dom-bind">
+        <next-code-block></next-code-block>
+      </template>
+    </div>
   </template>
 </custom-element-demo>
 ```
 -->
 ```html
 <paper-progress-button
-    active
+    active="[[active]]"
     active-text="Submit"
     inactive-text="Submitting...">
 </paper-progress-button>
-<paper-progress-button
-    action-text="Submit"
-    inactive-text="Submitting...">
-</paper-progress-button>
+<paper-checkbox checked="{{active}}">Active</paper-checkbox>
 ```
 
 ## License
