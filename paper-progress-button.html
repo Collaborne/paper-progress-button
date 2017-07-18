@@ -20,6 +20,10 @@ A paper button gets disabled and shows a spinner while submitting
 				@apply --paper-progress-button-button;
 			}
 
+			.button:not([disabled]) {
+				@apply --paper-progress-button-button-active;
+			}
+
 			.spinner {
 				margin-left: 10px;
 				@apply --paper-progress-button-spinner;
