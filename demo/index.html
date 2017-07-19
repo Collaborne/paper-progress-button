@@ -27,6 +27,7 @@
 							<paper-progress-button
 								active="[[active]]"
 								disabled="[[disabled]]"
+								raised="[[raised]]"
 								active-text="Submit"
 								inactive-text="Submitting..."
 								on-pressed="toggleActive">
@@ -34,6 +35,7 @@
 
 							<paper-checkbox checked="{{active}}">Active</paper-checkbox>
 							<paper-checkbox checked="{{disabled}}">Disabled</paper-checkbox>
+							<paper-checkbox checked="{{raised}}">Raised</paper-checkbox>
 							
 						</div>
 					</template>
@@ -44,6 +46,7 @@
 		<script>
 			const demo = document.querySelector("dom-bind");
 			demo.active = true;
+			demo.raised = true;
 			demo.toggleActive = () => demo.active = !demo.active;
 		</script>
 	</body>

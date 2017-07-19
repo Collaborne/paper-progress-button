@@ -27,7 +27,8 @@ To install the element:
 <paper-progress-button
     active="[[active]]"
     active-text="Submit"
-    inactive-text="Submitting...">
+    inactive-text="Submitting..."
+    raised>
 </paper-progress-button>
 <paper-checkbox checked="{{active}}">Active</paper-checkbox>
 ```
