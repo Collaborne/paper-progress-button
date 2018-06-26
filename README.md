@@ -1,4 +1,7 @@
 paper-progress-button [![Bower version](https://badge.fury.io/bo/paper-progress-button.svg)](http://badge.fury.io/bo/paper-progress-button) [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/Collaborne/paper-progress-button)
+
+[![Published on Vaadin  Directory](https://img.shields.io/badge/Vaadin%20Directory-published-00b4f0.svg)](https://vaadin.com/directory/component/Collabornepaper-progress-button)
+[![Stars on vaadin.com/directory](https://img.shields.io/vaadin-directory/star/Collabornepaper-progress-button.svg)](https://vaadin.com/directory/component/Collabornepaper-progress-button)
 =========
 
 A paper button gets disabled and shows a spinner while submitting
